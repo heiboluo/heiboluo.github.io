@@ -4,26 +4,94 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>黑菠萝个人网站</title>
-  <link rel="shortcut icon" href="./images/icon.png" type="image/x-icon">
-  <link rel="stylesheet" href="./css/bese.css">
-  <link rel="stylesheet" href="./css/index.css">
+  <title>小卡选择动画</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: '华文琥珀', sans-serif;
+    }
+
+    body {
+      font-size: 30px;
+      font-weight: 500;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-color: #0f0f0f;
+      overflow: hidden;
+    }
+
+    .container {
+      position: relative;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container .card {
+      position: absolute;
+      width: 240px;
+      height: 360px;
+      background-color: #5e5cfc;
+      border-radius: 8px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: rgba(0, 0, 0, 0);
+      transition: .5s;
+      transform-origin: 50% 100%;
+      filter: hue-rotate(calc(var(--i) * 60deg));
+      box-shadow: 0 15px 50px rgba(0, 0, 0, .1);
+      z-index: 2;
+    }
+
+    .container:hover .card {
+      transform: rotate(calc(var(--i) * 5deg)) translate(calc(var(--i) * 120px), -50px);
+      box-shadow: 0 15px 50px rgba(0, 0, 0, .25);
+      color: rgba(0, 0, 0, .25);
+      cursor: pointer;
+    }
+
+    .container .aaa {
+      font-size: 20px;
+      font-weight: 400;
+      color: #000;
+      transition: .1s;
+    }
+
+    .container:hover .aaa {
+      width: 0;
+      height: 0;
+      box-shadow: none;
+      z-index: 1;
+    }
+
+    .container:active .card:not(:active) {
+      background-color: #333;
+    }
+
+    .container .card:active {
+      translate: calc(var(--i) * 20px) -50px;
+      z-index: 999;
+    }
+  </style>
 </head>
-
-<body>
-  <nav>
-    <div class="logo"></div>
-    <ul>
-      <li><a href="/index.html">首页</a></li>
-      <li><a href="./html/zuopin.html">作品集</a></li>
-      <li><a href="./html/jingyan.html">经验</a></li>
-      <li><a href="./html/lianxiwo.html">联系</a></li>
-      <li><a href="./html/qita.html">其它</a></li>
-    </ul>
-  </nav>
-  <footer>
-
-  </footer>
+<div class="container">
+  <div class="card" style="--i:-4;">介绍</div>
+  <div class="card" style="--i:-3;">作品</div>
+  <div class="card" style="--i:-2;">经验</div>
+  <div class="card" style="--i:-1;">日常</div>
+  <div class="card" style="--i:0;">其他</div>
+  <div class="card" style="--i:1;">联系我</div>
+  <div class="card" style="--i:2;">Github</div>
+  <div class="card" style="--i:3;">Gitee</div>
+  <div class="card" style="--i:4;">等待补充</div>
+  <div class="card aaa" style="--1:5;">请把鼠标放在这里</div>
+</div>
 </body>
 
 </html>
