@@ -52,6 +52,7 @@ body {
 .container:hover .aaa {
     width: 0;
     height: 0;
+    color: rgba(0, 0, 0, 0);
     box-shadow: none;
     z-index: 1;
 }
