@@ -56,11 +56,11 @@ body {
     z-index: 1;
 }
 
-.container:active .card:not(:active) {
+.container:hover .card:not(:active) {
     background-color: #333;
 }
 
-.container .card:active {
+.container .card:hover {
     translate: calc(var(--i) * 20px) -50px;
     z-index: 999;
 }
@@ -68,6 +68,9 @@ body {
 .card a {
     text-decoration: none;
     display: inline-block;
+    text-align: center;
+    width: 240px;
+    height: 360px;
     height: 360px;
     line-height: 360px;
 }
